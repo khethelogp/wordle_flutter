@@ -13,16 +13,32 @@ class _KeyboardState extends State<Keyboard> {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-      color: Colors.lightBlue,
-      child: Column(
-        children: kKeys.map((keyRow) => Text('hi')).toList()
-          // ListView.builder(
-          //   itemCount: kKeys.length,
-          //   itemBuilder: (ctx, index) {
-          //     return Text(kKeys[index].first);
-          //   } 
-          // )
-        
+      child: GridView.count(
+        crossAxisCount: kKeys.first.length,
+        children: List.generate(kKeys.first.length, (i) {
+          return InkWell(
+            onTap: () {},
+            splashColor: kSecondary,
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    kKeys.first[i].toString().toUpperCase(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }),
       ) 
     );
   }

@@ -5,7 +5,7 @@ Color kDarkgrey = const Color(0x3A3A3D);
 Color kGrey = const Color(0x818384);
 Color kLightgrey = const Color(0xD7DADC);
 Color kPrimary = const Color(0x538D4E);
-Color secondary = const Color(0xB59F3B); 
+Color kSecondary = const Color(0xB59F3B); 
 
 class CustomColors {
   String colorName;
