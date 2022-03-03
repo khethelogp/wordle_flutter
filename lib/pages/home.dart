@@ -12,11 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String title = 'Wordle';
+  final NUMBER_OF_TRIES = 6;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBlack,
+      // backgroundColor: Color(0xFF121214),
+      backgroundColor: kcBlack,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               alignment: Alignment.center,
-              // color: Colors.lightGreen,
               child: Text(
                 title.toUpperCase(),
                 style: const TextStyle(
@@ -35,7 +36,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            Keyboard()
+            Container(
+              height: 400,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: GridView.count(
+                crossAxisCount: 6,
+                children: List.generate(
+                  NUMBER_OF_TRIES * 6, 
+                  (index) => Container(
+                    margin: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color(0xFF3A3A3D),
+                        width: 2
+                      )
+                    ),
+                    child: const Center(
+                      child: Text('H', style: TextStyle(color: Colors.white),),
+                    ),
+                  )
+                )
+              ),
+            ),
+            const Keyboard(),
           ],
         )
       ),
