@@ -1,8 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:wordle_flutter/app/app_colors.dart';
-import 'package:wordle_flutter/wordle/worlde.dart';
 
 enum LetterStatus { initial, notInWord, inWord, correct }
 
