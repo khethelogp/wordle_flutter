@@ -57,19 +57,22 @@ class _WordleScreenState extends State<WordleScreen> {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(height: 20,),
-          Board(board: _board, flipCardKeys: _flipCardkeys),
-          const SizedBox(height: 20,),
-          Keyboard(
-            onKeyTapped: _onKeyTapped, 
-            onDeleteTapped: _onDeleteTapped, 
-            onEnterTapped: _onEnterTapped,
-            letters: _keyboardLetters,
-          ),
-        ],
+      body: Container(
+        padding: const EdgeInsets.only(bottom: 25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(height: 20,),
+            Board(board: _board, flipCardKeys: _flipCardkeys),
+            const SizedBox(height: 20,),
+            Keyboard(
+              onKeyTapped: _onKeyTapped, 
+              onDeleteTapped: _onDeleteTapped, 
+              onEnterTapped: _onEnterTapped,
+              letters: _keyboardLetters,
+            ),
+          ],
+        ),
       ),
     );
   }
